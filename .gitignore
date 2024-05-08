@@ -1,0 +1,10 @@
+node_modules
+package-lock.json
+babel.config.js
+index.js
+allure-results
+allure-report/*
+local.log
+secrets.js
+.DS_Store
+.env

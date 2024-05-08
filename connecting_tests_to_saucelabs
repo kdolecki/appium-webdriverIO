@@ -1,0 +1,26 @@
+https://docs.saucelabs.com/mobile-apps/automated-testing/appium/real-devices/
+
+1. Create Sauce Labs account -> get username and access key
+2. Set up the device in SLs account (Live >> Mobile App) and change in desiredCapabilities
+"desiredCapabilities": {
+platformName: 'iOS',
+'appium:platformVersion': '15',
+'appium:deviceName': 'iPhone .*',
+'appium:orientation': 'portrait',
+'appium:app': 'storage:filename=<file-name>',
+'sauce:options': {
+username: 'SAUCE_USERNAME',
+accessKey: 'SAUCE_ACCESS_KEY'
+}
+}
+ 3. Specify your app in desiredCapabilities:
+ there are three options:
+- 'appium:app', 'storage:filename=mapp.ipa'
+- 'appium:app', 'https://github.com/test-apps/ios-app.ipa'-> ask developers to provide this link
+- You can also install a dependent app or an app upgrade during a test by using the driver.installApp('path-to-app') command.
+  4. Copy desiredCapabilities to wdio.conf.js filename
+  -- 'npm run test' -- to check if it works
+second command for launching tests is 'npm test run ./newconfig.js -- --suite TestsAfterSignIn' but still needs some adjusting // WIP
+  5. Configure pipeline in github actions
+  https://www.linkedin.com/pulse/running-appium-tests-github-actions-moataz-nabil
+  

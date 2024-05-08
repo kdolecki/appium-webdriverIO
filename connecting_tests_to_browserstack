@@ -1,0 +1,15 @@
+https://www.browserstack.com/docs/app-automate/appium/getting-started/nodejs/webdriverio
+
+1. Create Browserstack account and Set access credentials
+Set userName and accessKey parameters using environment variables to authenticate your tests.
+# Set these values in your ~/.zprofile (zsh) or ~/.profile (bash) or we can add it in secret.js
+export BROWSERSTACK_USERNAME="YOUR_USERNAME"
+export BROWSERSTACK_ACCESS_KEY="YOUR_ACCESS_KEY"
+
+2. In Browserstack Select Android or iOS devices from a list of 150+ available combinations
+3. change capabilities (bstack:options -> deviceName, platformVersion, platformName from #2) in test.conf.js 
+4. Copy capabilities from test.conf.js to wdio.conf.js in dedicated sections
+-- run the tests using 'npm run test' --
+second command for launching tests is 'npm test run ./newconfig.js -- --suite TestsAfterSignIn' but still needs some adjusting // WIP
+5. Set up the pipeline in github actions
+https://www.linkedin.com/pulse/running-appium-tests-github-actions-moataz-nabil
