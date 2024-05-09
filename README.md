@@ -18,7 +18,7 @@ Installation:
 Before run:
 1. Add your app to /webdriverio-appium/app 
 2. Change your capabilities in wdio.conf.js
-3. Plug in your device
+3. Plug in your device or run tests on Browserstack using 'npm run browserstack'
 
 Run:
-'npx wdio'
+'npm run test'
